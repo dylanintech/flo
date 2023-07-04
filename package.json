@@ -1,6 +1,6 @@
 {
   "name": "flocli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "never get stuck on errors again. flo is a cli tool that catches and solves errors in your terminal",
   "main": "bin/index.js",
   "type": "module",

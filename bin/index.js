@@ -204,9 +204,9 @@ const main = async () => {
         let tools;
         if (apiKey) {
           if (argv.gpt4) {
-            model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-4' });
+            model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-4-0613' });
           } else {
-            model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-3.5-turbo' });
+            model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-3.5-turbo-0613' });
           }
           if (argv.searchEnabled) {
             const serpApiKeyInFile = await readSerpApiKey();
@@ -276,9 +276,9 @@ const main = async () => {
             let tools;
             if (apiKey) {
               if (argv.gpt4) {
-                model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-4' });
+                model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-4-0613' });
               } else {
-                model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-3.5-turbo' });
+                model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-3.5-turbo-0613' });
               }
               if (argv.searchEnabled) {
                 const serpApiKeyInFile = await readSerpApiKey();
