@@ -1,0 +1,30 @@
+{
+  "name": "flocli",
+  "version": "1.1.0",
+  "description": "never get stuck on errors again. flo is a cli tool that catches and solves errors in your terminal",
+  "main": "bin/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "dylan",
+  "license": "ISC",
+  "keywords": [
+    "cli"
+  ],
+  "bin": {
+    "flo": "./bin/index.js"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.22.5",
+    "boxen": "^7.1.0",
+    "chalk": "^5.3.0",
+    "dotenv": "^16.3.1",
+    "hnswlib-node": "^1.4.2",
+    "inquirer": "^9.2.7",
+    "langchain": "^0.0.100",
+    "open": "^9.1.0",
+    "replicate": "^0.9.3",
+    "yargs": "^17.7.2"
+  }
+}
