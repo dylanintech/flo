@@ -101,7 +101,8 @@ const monitorErrorsAndSend = async (agent, processToMonitor, processArgs, noWarn
     const command = spawn(processToMonitor, processArgs);
   
     command.stderr.on('data', async (data) => {
-      if (noWarnings && !data.toString().includes("Error")) {
+      // console.log('warnings disabled:', noWarnings);
+      if (noWarnings && !data.toString().toLowerCase().includes("error")) {
         return;
       }
       console.error(`error from the ${processToMonitor} process: ${data}`);
@@ -203,6 +204,7 @@ const main = async () => {
         let model;
         let tools;
         if (apiKey) {
+          // console.log('gpt-4 enabled:', argv.gpt4);
           if (argv.gpt4) {
             model = new ChatOpenAI({ temperature: 0.5, openAIApiKey: apiKey, modelName: 'gpt-4-0613' });
           } else {
@@ -232,6 +234,7 @@ const main = async () => {
               returnIntermediateSteps: true,
               // verbose: true,
           });
+          // console.log('argv no warnings:', argv.noWarnings);
           await monitorErrorsAndSend(executor, command, args, argv.noWarnings); //added argv.noWarnings boolean
         } else {
           console.log("it seems like your api key wasn't found. maybe try running `flo login` to log in and then try again?");
@@ -465,9 +468,7 @@ const main = async () => {
         } catch (error) {
           console.error('error in set-theme command callback:', error);
         }
-      })
-       
-      .demandCommand(1, '') // At least 1 command is required
+      }).demandCommand(1, '') // At least 1 command is required
       .recommendCommands()
       .help()
       .version('1.0.0')
