@@ -11,8 +11,9 @@ enough intros, let's start catching some errors :)
 ## getting started
 so the first thing you're gonna wanna do is install the `flocli` package via npm:
 ```bash
-npm i flocli
+npm install -g flocli
 ```
+**make sure to add that -g flag, if you don't add it the package will install but the cli commands won't work!**
 once it's installed you're gonna wanna run the `configure` command to configure flo with your api key(s):
 ```bash
 flo configure
